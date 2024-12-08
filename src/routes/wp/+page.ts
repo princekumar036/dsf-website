@@ -1,0 +1,13 @@
+
+export async function load({ fetch, url }) {
+  const id = url.searchParams.get('id');
+  
+  const response = await fetch(`https://public-api.wordpress.com/rest/v1.1/sites/dsfjnu.wordpress.com/posts?number=100`);
+  const data = await response.json();
+  if (data) {
+    return { data }
+  }
+  return {
+      posts: []
+  };
+}
