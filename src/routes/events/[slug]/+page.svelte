@@ -18,14 +18,14 @@
 	<meta property="og:url" content="{$page.url.href}" />
 	<meta property="og:title" content="{post.title} - {post.date}" />
 	<meta property="og:description" content="{toHTML(post.content)}.substring(0, 150).replace(/<\/?[^>]+(>|$)/g, '')" />
-	<meta property="og:image" content="{post.eventImage}" />
+	<meta property="og:image" content={urlFor(post.eventImage).url()} />
 
 	<!-- Twitter -->
 	<meta property="twitter:card" content="summary_large_image" />
 	<meta property="twitter:url" content="{$page.url.href}" />
 	<meta property="twitter:title" content="{post.title} - {post.date}" />
 	<meta property="twitter:description" content="{toHTML(post.content)}.substring(0, 150).replace(/<\/?[^>]+(>|$)/g, '')" />
-	<meta property="twitter:image" content="{post.eventImage}" />
+	<meta property="twitter:image" content={urlFor(post.eventImage).url()} />
 </svelte:head>
 
 <div class="min-h-screen mx-auto prose p-10 md:p-0 md:py-10">
