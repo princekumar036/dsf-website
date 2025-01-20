@@ -7,6 +7,12 @@ import { injectSpeedInsights } from '@vercel/speed-insights/sveltekit';
 injectAnalytics({ mode: dev ? 'development' : 'production' });
 injectSpeedInsights();
 
+import type { Config } from '@sveltejs/adapter-vercel';
+
+export const config: Config = {
+	runtime: 'nodejs20.x'
+};
+
 export async function load() {
   // const archive = await client.fetch('*[_type == "archive" && hideOnWebsite != true] | order(created desc)')
   // const release = await client.fetch('*[_type == "release"]')
