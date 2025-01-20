@@ -151,7 +151,7 @@
             {/if}
         </label>
 
-        <input type="submit" value="Submit" class="w-full bg-red-800 text-white font-bold p-2 ">
+        <input type="submit" value="Submit" class="w-full bg-red-800 text-white font-bold p-2 cursor-pointer">
 
         {#if form?.missing}<p class="text-red-500 text-sm italic">* One or more required fields are missing</p>{/if}
     </form>
