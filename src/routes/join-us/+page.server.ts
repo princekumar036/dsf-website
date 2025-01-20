@@ -11,7 +11,6 @@ const authSanityDetails = {
 }
 
 const client = createClient(authSanityDetails)
-console.log(client);
 
 export const actions = {
 	default: async ({ request }) => {
