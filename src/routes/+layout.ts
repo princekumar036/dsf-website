@@ -2,8 +2,10 @@ import { client } from "$lib/sanity";
 import { release_store, event_store, archive_store, officebearer_store } from "$lib/stores";
 import { dev } from '$app/environment';
 import { injectAnalytics } from '@vercel/analytics/sveltekit';
+import { injectSpeedInsights } from '@vercel/speed-insights/sveltekit';
 
 injectAnalytics({ mode: dev ? 'development' : 'production' });
+injectSpeedInsights();
 
 export async function load() {
   // const archive = await client.fetch('*[_type == "archive" && hideOnWebsite != true] | order(created desc)')
