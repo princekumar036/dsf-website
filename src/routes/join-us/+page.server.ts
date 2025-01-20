@@ -53,15 +53,20 @@ export const actions = {
                 <br><br>
                 <a href="upi://pay?pa=sarikajnu@dbs&pn=Democratic%20Students%27%20Federation&tn=Membership%20Fee%20(min%20Rs%205)&cu=INR">
                     <p>sarikajnu@dbs</p>
-                    <img src="https://www.dsfofficial.in/files/qrcode.svg" alt="QR Code">
+                    <img src="cid:qrcode" alt="QR Code">
                 </a>
                 <br><br>
-                You can also <a class="underline text-blue-500 font-bold" href="/contact">contact</a> any of our office bearers to pay the membership fee or for any other queries.
+                You can also <a class="underline text-blue-500 font-bold" href="https://www.dsfofficial.in/contact">contact</a> any of our office bearers to pay the membership fee or for any other queries.
                 <br><br>
                 Best regards,
                 <br>
                 Democratic Students' Federation
             `,
+            attachments: [{
+                filename: 'qrcode.svg',
+                path: `/files/qrcode.svg`,
+                cid: 'qrcode'
+            }]
         };
         
 
