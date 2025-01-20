@@ -45,7 +45,7 @@ export const actions = {
             to: newMember.email,
             subject: `Thank you for joining DSF`,
             html: `
-                Dear ${newMember.name},
+                Dear <b>${newMember.name}</b>,
                 <br><br>
                 Thank you for joining DSF. The Democratic Students' Federation (DSF) would like to formally welcome you to the organization. We hope to have a vibrant engagement with you in the future in our united struggles against anti-student and anti-people policies in the campus and in the country.
                 <br><br>
@@ -53,7 +53,7 @@ export const actions = {
                 <br><br>
                 <a href="upi://pay?pa=sarikajnu@dbs&pn=Democratic%20Students%27%20Federation&tn=Membership%20Fee%20(min%20Rs%205)&cu=INR">
                     <p>sarikajnu@dbs</p>
-                    <img src="cid:qrcode@dsfupi" alt="QR Code">
+                    <img src="cid:eab96c2c-da8d-4a21-88b4-e59e40e6da25" alt="QR Code" style="max-width: 200px;">
                 </a>
                 <br><br>
                 You can also <a class="underline text-blue-500 font-bold" href="https://www.dsfofficial.in/contact">contact</a> any of our office bearers to pay the membership fee or for any other queries.
@@ -63,9 +63,9 @@ export const actions = {
                 Democratic Students' Federation
             `,
             attachments: [{
-                filename: 'qrcode.svg',
-                path: `https://www.dsfofficial.in/files/qrcode.svg`,
-                cid: 'qrcode@dsfupi'
+                filename: 'dsfqr.png',
+                path: `https://www.dsfofficial.in/files/dsfqr.png`,
+                cid: 'eab96c2c-da8d-4a21-88b4-e59e40e6da25'
             }]
         };
         
