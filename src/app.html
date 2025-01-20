@@ -5,11 +5,47 @@
 		<link rel="icon" href="/files/favicon.ico" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		%sveltekit.head%
-		<script src="/index.js"></script>
 		<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     	<script src="https://kit.fontawesome.com/1fac2f10ac.js" crossorigin="anonymous"></script>
 	</head>
 	<body data-sveltekit-preload-data="hover">
 		<div style="display: contents">%sveltekit.body%</div>
 	</body>
+
+	<script>
+	// NAV MENU TOGGLE
+	$(document).ready(function() {
+		$('#navtoggle').click(function() {
+			$('#navtoggle-open').toggle();
+			$('#navtoggle-close').toggle();
+			$('#navmenu').slideToggle();
+		})
+	})
+
+
+	// MOVEMENTS DESCRIPTION APPEARS ON HOVER ON LARGE SCREEN
+	if(window.screen.width >= 1024) {
+		$('#movements article').hover(function() {
+			$(this).find('#movement-description').slideToggle()
+		})
+	}
+
+
+	// MOVEMENTS SROLL ON CLICKING LEFT AND RIGHT BUTTON
+		// ON LARGE SCREEN
+	document.querySelector('#slide-right').addEventListener('click', function(e) {
+		document.querySelector('#movements').scrollBy({
+			top: 0,
+			left: 500,
+			behavior: 'smooth'
+			});
+	})
+	document.querySelector('#slide-left').addEventListener('click', function() {
+		document.querySelector('#movements').scrollBy({
+			top: 0,
+			left: -500,
+			behavior: 'smooth'
+			});
+	})
+	</script>
 </html>
