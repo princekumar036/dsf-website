@@ -1,9 +1,11 @@
 <script lang="ts">
     import OfficeBearers from "../components/OfficeBearers.svelte";
     import Social from "../components/Social.svelte";
-
-
 </script>
+
+<svelte:head>
+    <title>Contact - DSF</title>
+</svelte:head>
 
 <main class="min-h-screen py-10 px-10 lg:px-32">
     <h2 class="text-4xl font-rbto-cnsd font-bold text-center">Contact Us</h2>

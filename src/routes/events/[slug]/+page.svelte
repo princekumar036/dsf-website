@@ -8,6 +8,10 @@
     const post = $event_store.find(post => post._id == id)
 </script>
 
+<svelte:head>
+    <title>{post.title} - Events - DSF</title>
+</svelte:head>
+
 <div class="min-h-screen mx-auto prose p-10 md:p-0 md:py-10">
     <p class="text-xs italic bg-blue-800 inline-block p-1 px-2 rounded-full text-white">Event</p>
 

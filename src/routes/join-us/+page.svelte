@@ -17,6 +17,9 @@
 
 </script>
 
+<svelte:head>
+    <title>Join Us - DSF</title>
+</svelte:head>
 
 <main class="min-h-screen p-10 max-w-screen-md mx-auto">
 

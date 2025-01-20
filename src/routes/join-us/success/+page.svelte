@@ -2,6 +2,9 @@
     import { page } from '$app/stores';
 </script>
 
+<svelte:head>
+    <title>Success - Join Us - DSF</title>
+</svelte:head>
 
 <main class="min-h-screen p-10 max-w-screen-md mx-auto">
     <div class="text-center my-10">

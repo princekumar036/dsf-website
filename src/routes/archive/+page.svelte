@@ -21,6 +21,10 @@
     }
 </script>
 
+<svelte:head>
+    <title>Archive - DSF</title>
+</svelte:head>
+
 <main class="min-h-screen py-10 px-10 max-w-6xl mx-auto">
     <h2 class="text-4xl font-rbto-cnsd font-bold text-center">Archive</h2>
     <p class="text-center mb-10">Posts from our <a href="https://dsfjnu.wordpress.com/" target="_blank" class="text-blue-600 underline">legacy blog</a></p>

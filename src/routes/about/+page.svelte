@@ -2,6 +2,10 @@
     import Header from '../components/Header.svelte';
 </script>
 
+<svelte:head>
+    <title>About - DSF</title>
+</svelte:head>
+
 
 <!-- MAIN -->
 <main class="min-h-screen p-10 md:p-0 md:py-10">

@@ -8,7 +8,7 @@
     }
 </script>
 
-<div class="flex flex-wrap gap-8 justify-center">
+<div class="flex flex-wrap gap-8 justify-center my-8">
     {#each data.data.posts as post}
         <a href={`/wp/${post.slug}?id=${post.ID}`} class="block w-60 rounded-xl">
             <img src={getFirstImageSrc(post.content)} alt="" class="w-full h-40 object-cover rounded-t-xl" />
