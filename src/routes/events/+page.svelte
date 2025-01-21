@@ -2,8 +2,8 @@
     import PostCard from '../components/PostCard.svelte';
     import { event_store } from '$lib/stores';
     import { urlFor, components } from '$lib/sanity';
-
-    const upcomingEvents = $event_store.filter(event => new Date(event.date) > new Date())
+    
+    const upcomingEvents = $event_store.filter(event => new Date(event.date) >= new Date())
         .sort((a, b) => new Date(a.date) - new Date(b.date))
     const pastEvents = $event_store.filter(event => new Date(event.date) < new Date())
 </script>

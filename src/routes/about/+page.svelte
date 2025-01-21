@@ -12,7 +12,7 @@
     <h2 class="text-4xl font-rbto-cnsd font-bold text-center">About DSF</h2>
 
     <div class="prose mx-auto">
-        <img class="py-6" src="./files/unit-conf.png" alt="DSF Unit Conference">
+        <img class="py-6" src="./files/about.jpg" alt="DSF Unit Conference">
 
     <p class="mb-4">The DSF is an <b>independent left-wing students' organisation</b> formed in 2012-13 after a long and thorough debate regarding the direction of the left movement in India and the role of the autonomy of the student movement in the same. The DSF believes that the student movement must be autonomous and independent and should create a space for democratic and bottom-up discussion where the imagination and ideals of the student movement are not compromised by the electoral calculations of political parties beyond the university space. <b>DSF is the longest running autonomous student organisation in JNU</b>.</p>
 

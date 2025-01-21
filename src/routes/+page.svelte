@@ -34,7 +34,7 @@
                 <p class="mt-5 mb-7 text-justify">DSF is an independent, leftwing students' organisation which was formed in 2012-13 by student activists of JNU. DSF seeks to strengthen the progressive and democratic students' movement across the country on the basis of independent, principled positions on the issues confronting the student community.</p>
                 <a class="font-rbto-cnsd font-bold lg:text-lg text-white px-10 py-3 bg-red-800 rounded-md inline-block shadow-lg hover:scale-95" href="/about">learn more</a>
             </div>
-            <div class=""><img src="./files/unit-conf.png" alt=""></div>
+            <div class=""><img src="./files/about.jpg" alt=""></div>
         </section>
     </section>
 

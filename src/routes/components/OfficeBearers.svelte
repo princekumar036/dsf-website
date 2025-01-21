@@ -12,7 +12,7 @@
     <div class="flex gap-3 rounded-lg shadow-md md:flex-col md:w-fit md:px-16 md:py-5 md:text-center hover:scale-105 transition-transform hover:shadow-lg">
         
         {#if ob.image}
-            <img class="w-40 rounded-l-lg md:rounded-full" src={urlFor(ob.image).url()} alt={ob.name}>
+            <img class="w-40 h-40 object-cover rounded-l-lg md:rounded-full" src={urlFor(ob.image).url()} alt={ob.name}>
         {/if}
 
         <div class="my-auto text-gray-600">
