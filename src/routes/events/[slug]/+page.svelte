@@ -5,7 +5,7 @@
     import { event_store } from '$lib/stores';
 
     const id = $page.url.searchParams.get('id');    
-    const post = $event_store.find(post => post._id == id)
+    const post = $event_store.find(post => post._id == id)    
 </script>
 
 <svelte:head>
@@ -16,14 +16,14 @@
 	<!-- Open Graph / Facebook -->
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="{$page.url.href}" />
-	<meta property="og:title" content="{post.title} ({post.date.toDateString()})" />
+	<meta property="og:title" content="{post.title} ({new Date(post.date).toDateString()})" />
 	<meta property="og:description" content="{toHTML(post.content)}.substring(0, 150).replace(/<\/?[^>]+(>|$)/g, '')" />
 	<meta property="og:image" content={urlFor(post.eventImage).url()} />
 
 	<!-- Twitter -->
 	<meta property="twitter:card" content="summary_large_image" />
 	<meta property="twitter:url" content="{$page.url.href}" />
-	<meta property="twitter:title" content="{post.title} ({post.date.toDateString()})" />
+	<meta property="twitter:title" content="{post.title} ({new Date(post.date).toDateString()})" />
 	<meta property="twitter:description" content="{toHTML(post.content)}.substring(0, 150).replace(/<\/?[^>]+(>|$)/g, '')" />
 	<meta property="twitter:image" content={urlFor(post.eventImage).url()} />
 </svelte:head>

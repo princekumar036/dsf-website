@@ -9,7 +9,7 @@
 
 {#if featuredEvent}
 <section>
-    <a href="/events/{featuredEvent.slug.current}?id={featuredEvent._id}" class="flex flex-col justify-center md:flex-row md:items-center gap-8 p-8 py-12 bg-red-800 text-white">
+    <a href="/events/{featuredEvent.slug.current}?id={featuredEvent._id}" class="flex flex-col justify-center items-center md:flex-row md:items-center gap-8 p-8 py-12 bg-red-800 text-white">
         {#if featuredEvent.eventImage}
             <img src={urlFor(featuredEvent.eventImage).url()} alt={featuredEvent.title} class="block shadow-lg md:max-w-80 w-80 h-80 object-cover">
         {/if}
