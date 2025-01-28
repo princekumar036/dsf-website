@@ -51,8 +51,8 @@ export const actions = {
                 <br><br>
                 To remind you (please ignore if already done), as an independent left student organization, we are in need of funds for continuing the functioning of the organization and undertake various initiatives. Therefore, kindly pay the membership fee of minimum Rs 5 on given UPI Id.
                 <br><br>
-                <a href="upi://pay?pa=sarikajnu@dbs&pn=Democratic%20Students%27%20Federation&tn=Membership%20Fee%20(min%20Rs%205)&cu=INR">
-                    <p>sarikajnu@dbs</p>
+                <a href="upi://pay?pa=9368135895@ptyes&pn=Democratic%20Students%27%20Federation&tn=Membership%20Fee%20(min%20Rs%205)&cu=INR">
+                    <p>9368135895@ptyes</p>
                     <img src="cid:eab96c2c-da8d-4a21-88b4-e59e40e6da25" alt="QR Code" style="max-width: 200px;">
                 </a>
                 <br><br>
@@ -63,8 +63,8 @@ export const actions = {
                 Democratic Students' Federation
             `,
             attachments: [{
-                filename: 'dsfqr.png',
-                path: `https://www.dsfofficial.in/files/dsfqr.png`,
+                filename: 'qrcode.jpg',
+                path: `https://www.dsfofficial.in/files/qrcode.jpg`,
                 cid: 'eab96c2c-da8d-4a21-88b4-e59e40e6da25'
             }]
         };
