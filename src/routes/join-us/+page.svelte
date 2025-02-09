@@ -1,6 +1,7 @@
 <script lang="ts">
     import { onMount } from "svelte";
     import { enhance } from "$app/forms";
+    import { load } from "../+layout";
 
     // SET VALUE OF ALL OPTION ELEMENTS SAME AS INNER TEXT
     onMount(() => {
@@ -12,6 +13,7 @@
     })
 
     export let form
+    let loading = false
     let university:string,
         school:string
 
@@ -30,22 +32,25 @@
             <h6 class=" mb-5 text-lg">Become a member of DSF</h6>
         </div>
 
-    <form method="POST" class="flex flex-col gap-5 md:gap-10 my-10 p-10 md:p-20 rounded border" use:enhance >
-
+    <form method="POST" class="flex flex-col gap-5 md:gap-10 my-10 p-10 md:p-20 rounded border" 
+        use:enhance={() => {
+            loading = true
+        }}
+    >
         <label class="">Name <span class="text-red-500 text-sm">*</span>
-            <input type="text" name="name" class="w-full" required>
+            <input type="text" name="name" class="w-full" required disabled={loading}>
         </label>
 
         <label>Email <span class="text-red-500 text-sm">*</span>
-            <input type="email" name="email" class="w-full" required>
+            <input type="email" name="email" class="w-full" required disabled={loading}>
         </label>
 
         <label>Phone 
-            <input type="number" name="phone" min="1000000000" max="9999999999" class="w-full">
+            <input type="number" name="phone" min="1000000000" max="9999999999" class="w-full" disabled={loading}>
         </label>
 
         <label>University <span class="text-red-500 text-sm">*</span>
-            <select name="university" class="w-full"  bind:value={university} required>
+            <select name="university" class="w-full"  bind:value={university} required disabled={loading}>
                 <option disabled selected>Select</option>
                 <option value="JNU">Jawaharlal Nehru University</option>
                 <option>Other</option>
@@ -53,11 +58,11 @@
         </label>
 
         <label class="{university == 'Other' ? 'block' : 'hidden'}">University Name <span class="text-red-500 text-sm">*</span>
-            <input type="text" name="university" class="w-full" value="{university == 'JNU' ? 'JNU' : ''}" required>
+            <input type="text" name="university" class="w-full" value="{university == 'JNU' ? 'JNU' : ''}" required disabled={loading}>
         </label>
 
         <label class="{university == 'JNU' ? 'block' : 'hidden'}">School
-            <select name="school" class="w-full" bind:value={school}>
+            <select name="school" class="w-full" bind:value={school} disabled={loading}>
                 <option disabled selected>Select</option>
                 <option>School of International Studies</option>
                 <option>School of Language Literature and Culture Studies</option>
@@ -83,7 +88,7 @@
         </label>
 
         <label class="{university == 'JNU' && (school == 'School of International Studies' || school == 'School of Language Literature and Culture Studies' || school == 'School of Social Sciences' ) ? 'block' : 'hidden'}">Centre
-            <select name="centre" class="w-full {school == 'School of International Studies' ? 'block' : 'hidden'}">
+            <select name="centre" class="w-full {school == 'School of International Studies' ? 'block' : 'hidden'}" disabled={loading}>
                 <option disabled selected>Select</option>
                 <option>Centre for African Studies</option>
                 <option>Centre for Canadian, US and Latin American Studies</option>
@@ -100,7 +105,7 @@
                 <option>Centre for West Asian Studies</option>
             </select>
 
-            <select name="centre" class="w-full {school == 'School of Language Literature and Culture Studies' ? 'block' : 'hidden'}">
+            <select name="centre" class="w-full {school == 'School of Language Literature and Culture Studies' ? 'block' : 'hidden'}" disabled={loading}>
                 <option disabled selected>Select</option>
                 <option>Centre of Arabic and African studies</option>
                 <option>Centre for Chinese and South East Asian Studies</option>
@@ -116,7 +121,7 @@
                 <option>Centre of Spanish, Portuguese, Italian & Latin American</option>
             </select>
 
-            <select name="centre" class="w-full {school == 'School of Social Sciences' ? 'block' : 'hidden'}">
+            <select name="centre" class="w-full {school == 'School of Social Sciences' ? 'block' : 'hidden'}" disabled={loading}>
                 <option disabled selected>Select</option>
                 <option>Centre for Economic Studies and Planning</option>
                 <option>Centre for Media Studies</option>
@@ -134,7 +139,7 @@
 
         <label>Programme
             {#if university == 'JNU'}
-                <select name="programme" class="w-full">
+                <select name="programme" class="w-full" disabled={loading}>
                     <option disabled selected>Select</option>
                     <option>BA</option>
                     <option>BTech</option>
@@ -147,12 +152,19 @@
                     <option>Diploma</option>
                 </select>
             {:else}
-                <input type="text" name="programme" class="w-full">
+                <input type="text" name="programme" class="w-full" disabled={loading}>
             {/if}
         </label>
 
-        <input type="submit" value="Submit" class="w-full bg-red-800 text-white font-bold p-2 cursor-pointer">
+        <input type="submit" value="Submit" class="w-full bg-red-800 text-white font-bold p-2 cursor-pointer" disabled={loading}>
 
         {#if form?.missing}<p class="text-red-500 text-sm italic">* One or more required fields are missing</p>{/if}
     </form>
 </main>
+
+<style>
+    input:disabled, select:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+</style>

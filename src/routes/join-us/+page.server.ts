@@ -16,7 +16,8 @@ export const actions = {
 	default: async ({ request }) => {
         
 		const data = await request.formData();
-
+        console.log(data);
+        
         const newMember = {
             _type: 'membership',
             name: data.get('name'),
@@ -96,12 +97,11 @@ export const actions = {
             // SEND MAILS
             await transporter.sendMail(memberMail);
             await transporter.sendMail(dsfMail);
-            redirect(303, '/join-us/success')
+            throw redirect(303, '/join-us/success')
             return { success: true }
         }
         else {
-            redirect(303, '/join-us?msg=try-again')
+            throw redirect(303, '/join-us')
         }
-        
 	}
 }
